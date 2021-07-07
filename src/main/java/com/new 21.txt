@@ -1,0 +1,31 @@
+ try {
+                    /*    final Method method = dto
+                            .getClass()
+                            .getMethod(Person.getPersonAge.name(), null);
+                        System.out.println("asas::" + method.invoke(dto,null));*/
+
+                        for (Person enumConstant : Person.values()){
+                                final Method method = dto
+                                    .getClass()
+                                    .getMethod(enumConstant.methodName, null);
+                                String methodReturnValue = (String)method.invoke(dto,null);
+                                System.out.println("asas::" + methodReturnValue);
+                        }
+                }
+                catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                        e.printStackTrace();
+                }
+
+
+
+               /* Method[] methods= com.emirates.ibe.payment.urp.order.AdditionalDetailsDTO.class.getDeclaredMethods();
+                for (Method method : methods){
+                        System.out.println(method.getName());
+
+                }
+                        Field[] allFields = com.emirates.ibe.payment.urp.order.AdditionalDetailsDTO.class.getDeclaredFields();
+                        for(Field field : allFields){
+                                if(field.equals(CoBrandEnum.applicableApplyLink.name()))
+                                System.out.println(field.getName());
+                        }
+                System.out.println(CoBrandEnum.applicableApplyLink.name() );*/
